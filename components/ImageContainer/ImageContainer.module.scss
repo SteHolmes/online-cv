@@ -1,0 +1,35 @@
+@use '@/styles/_breakpoints.scss' as *;
+
+.imageContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  flex-direction: column; 
+
+  @include breakpoint-min(lg) {
+    flex-direction: row;
+  }
+}
+
+.imageItem {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 5px;
+  overflow: hidden;
+
+  @include breakpoint-min(lg) {
+    width: 32%;
+  }
+
+  img {
+    object-fit: cover;
+  }
+}
+
+//   img {
+//     object-fit: fill;
+//   }
+// }

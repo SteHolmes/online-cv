@@ -1,0 +1,70 @@
+@use '@/styles/_breakpoints.scss' as *;
+@use '@/styles/_variables.scss' as *;
+
+.accordionPanel {
+  width: 100%;
+  border: 2px solid #e5e5e5;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background: $white;
+
+  @include breakpoint-min(md) {
+    padding: 1rem;
+  }
+
+  .panelButton {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    background: white;
+    width: 100%;
+    cursor: pointer;
+    border: none;
+  
+    &[aria-expanded="true"] {
+      font-weight: bold;
+
+      .panelIcon {
+        transform: rotate(45deg);
+      }
+    }
+
+    h4 {
+      margin-bottom: 0.25rem;
+    }
+  }
+  
+  .panelIcon {
+    width: 1rem;
+    height: 1rem;
+    fill: $primary;
+    transition: transform 500ms;
+  
+    @include breakpoint-min(md) {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+  
+  .panelContentContainer {
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    padding: 0 0.5rem;
+    transition: grid-template-rows 0.5s;
+  
+    &[aria-hidden="false"] {
+      grid-template-rows: 1fr;
+    }
+  
+    & > div {
+      overflow: hidden;
+    }
+  }
+  
+  .panelContent {
+    padding: 1rem 0;
+  }
+}

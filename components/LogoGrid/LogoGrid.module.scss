@@ -1,0 +1,16 @@
+@use '@/styles/breakpoints' as *;
+
+.logoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 1.5rem;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+
+  @include breakpoint-min(lg) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

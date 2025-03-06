@@ -1,0 +1,28 @@
+$breakpoint-xs: xs;
+$breakpoint-sm: sm;
+$breakpoint-md: md;
+$breakpoint-lg: lg;
+$breakpoint-xl: xl;
+$breakpoint-xxl: xxl;
+
+$custom-breakpoints: (
+  xs: 320px,
+  sm: 480px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1201px,
+  xxl: 1401px,
+);
+
+@mixin breakpoint-min($breakpoint) {
+  @if map-has-key($custom-breakpoints, $breakpoint) {
+    @media (min-width: map-get($custom-breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($custom-breakpoints)}.";
+  }
+}
