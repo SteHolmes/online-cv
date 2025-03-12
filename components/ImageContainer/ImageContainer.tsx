@@ -3,17 +3,12 @@
 import Image from 'next/image'
 import styles from './ImageContainer.module.scss'
 
-interface Image {
-  id: number
-  imgSrc: string
-  altText: string
-}
-
 interface ImageContainerProps {
-  images: Image[]
+  images: Image[],
+  loading: boolean
 }
 
-export default function ImageContainer ({ images }: ImageContainerProps) {
+export default function ImageContainer ({ images, loading }: ImageContainerProps) {
   const renderedImages = images.map((image) => {
     return <div key={image.id} className={styles.imageItem}>
       <Image width={300} height={300} key={image.id} src={image.imgSrc} alt={image.altText} />
@@ -21,6 +16,8 @@ export default function ImageContainer ({ images }: ImageContainerProps) {
   })
 
   return (
-    <div className={styles.imageContainer}>{ renderedImages }</div>
+    <div className={`${styles.imageContainer} ${!loading ? `${styles.isVisible}` : ''}`}>
+      { renderedImages }
+    </div>
   )
 }

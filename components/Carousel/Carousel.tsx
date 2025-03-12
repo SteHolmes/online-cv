@@ -9,16 +9,18 @@ import "slick-carousel/slick/slick-theme.css"
 import styles from './Carousel.module.scss'
 
 interface Slide {
-  id: number;
+  id: string | number;
   imgSrc: string;
   altText: string;
+  order?: number;
 }
 
 interface CarouselProps {
-  slides: Slide[]
+  slides: Slide[],
+  loading: boolean,
 }
 
-export default function Carousel({slides}: CarouselProps) {
+export default function Carousel({slides, loading}: CarouselProps) {
   const settings = {
     centerMode: true,
     infinite: true,
@@ -68,7 +70,7 @@ export default function Carousel({slides}: CarouselProps) {
   })
   
   return (
-    <div className="slider-container">
+    <div className={`${styles.carouselContainer} ${!loading ? `${styles.isVisible}` : ''}`}>
       <Slider {...settings} className={styles.carousel}>
         { renderedSlides }
       </Slider>

@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { Amatic_SC, Quicksand } from "next/font/google"
-import "@/styles/globals.scss"
+import "@/styles/main.scss"
 import HeaderNav from '@/components/HeaderNav/HeaderNav'
 import Footer from '@/components/Footer/Footer'
 

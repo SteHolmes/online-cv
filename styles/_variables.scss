@@ -1,6 +1,9 @@
+// Dimensions
 $header-height: 80px;
 $header-border-height: 3px;
 $footer-height: 60px;
+$page-content-height: calc((100vh - 1px) - $header-height - $footer-height - $header-border-height);
+$content-max-width: 1080px;
 
 // Colours
 $primary: #36b0b5;
@@ -16,4 +19,4 @@ $grey-light: #e5e5e5;
 $grey-dark: #1d2121;
 $black: #0c0b0b;
 
-$contentMaxWidth: 1080px;
+$component-border-radius: 5px;

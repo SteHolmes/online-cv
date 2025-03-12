@@ -1,8 +1,21 @@
+@use "@/styles/variables" as *;
+@use '@/styles/breakpoints' as *;
+
 .contactForm {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  color: $primary;
+  background: linear-gradient(10deg, $grey-light, $white);
+  box-shadow: 1px 2px 6px rgba(0,0,0,0.3);
+  padding: 1rem 1rem 2rem 1rem;
+  border-radius: $component-border-radius;
+  margin: 1rem 0;
+
+  @include breakpoint-min(sm) {
+    padding: 2rem;
+  }
 }
 
 .formGroup {
@@ -10,13 +23,102 @@
   flex-direction: column;
   gap: 0.5rem;
   width: 100%;
-  max-width: 400px;
+}
+
+.textInput {
+  width: 100%;
+  background: transparent;
+  border: none;
+  background: $grey-light;
+  border-radius: 50px;
+  min-height: 35px;
+  padding: 0.25rem 1.25rem 0.25rem 2.75rem;
+  outline: 2px solid transparent;
+  box-shadow: inset -1px 1px 5px rgba(0,0,0,0.4);
+  transition: outline 0.5s;
+
+  &:focus {
+    outline: 2px solid $secondary;
+  }
+
+  @include breakpoint-min(sm) {
+    min-height: 45px;
+  }
+}
+
+.textArea {
+  padding: 1rem 1.25rem;
+  border-radius: 20px;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  svg {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    fill: $primary;
+    left: 1rem;
+  }
 }
 
 .submitButton {
   display: inline-block;
-  margin: 1rem 0 2rem 0;
+  margin-top: 1rem;
   width: 100%;
   max-width: 150px;
   padding: 10px;
+  background: transparent;
+  border: 2px solid $primary;
+  border-radius: 50px;
+  color: $primary;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: 0px 2px 7px rgba(0,0,0,0.4);
+
+  &:hover,
+  &:active {
+    background-color: $primary;
+    color: $white;
+    box-shadow: none;
+    transform: translateY(2px);
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
+    cursor: pointer;
+  }
+
+  @include breakpoint-min(sm) {
+    margin-top: 2rem;
+  }
+}
+
+.submitMessage {
+  font-weight: bold;
+  min-height: 300px;
+
+  span {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid $grey-light;
+    border-radius: $component-border-radius;
+  }
+
+  svg {
+    width: 3rem;
+    height: 3rem;
+    fill: $primary;
+    margin-right: 0.75rem;
+  }
+}
+
+// Override default input styles when using autocomplete in Chrome
+// https://stackoverflow.com/questions/2781549/removing-input-background-colour-for-chrome-autocomplete
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: all 5000s ease-in-out 0s;
 }

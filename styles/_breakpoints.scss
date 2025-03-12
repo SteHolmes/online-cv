@@ -1,3 +1,5 @@
+@use "sass:map";
+
 $breakpoint-xs: xs;
 $breakpoint-sm: sm;
 $breakpoint-md: md;
@@ -15,14 +17,14 @@ $custom-breakpoints: (
 );
 
 @mixin breakpoint-min($breakpoint) {
-  @if map-has-key($custom-breakpoints, $breakpoint) {
-    @media (min-width: map-get($custom-breakpoints, $breakpoint)) {
+  @if map.has-key($custom-breakpoints, $breakpoint) {
+    @media (min-width: map.get($custom-breakpoints, $breakpoint)) {
       @content;
     }
   }
 
   @else {
     @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
-        + "Available breakpoints are: #{map-keys($custom-breakpoints)}.";
+        + "Available breakpoints are: #{map.keys($custom-breakpoints)}.";
   }
 }

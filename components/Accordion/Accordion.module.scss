@@ -3,11 +3,11 @@
 
 .accordionPanel {
   width: 100%;
-  border: 2px solid #e5e5e5;
   border-radius: 10px;
   margin-bottom: 1rem;
   padding: 0.5rem;
   background: $white;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
 
   @include breakpoint-min(md) {
     padding: 1rem;

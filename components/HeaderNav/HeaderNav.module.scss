@@ -1,5 +1,6 @@
 @use '@/styles/variables' as *;
 @use '@/styles/breakpoints' as *;
+@use '@/styles/animations' as *;
 
 .appHeader {
   position: relative;
@@ -40,6 +41,8 @@
   width: 100%;
   height: $header-border-height;
   background: linear-gradient(to right, #00d8ff, #00ffcb, transparent);
+  transform:translateX(-100%);
+  animation: expand 0.7s ease-in-out forwards 0.1s;
 }
 
 .homeLink {
@@ -80,6 +83,16 @@
   color: white;
   text-decoration: none;
   gap: 0.5rem;
+  transition: color 0.3s;
+
+  &:hover {
+    color: $secondary;
+
+    svg {
+      fill: $secondary;
+      transition: fill 0.3s;
+    }
+  }
 }
 
 .navLinkIcon {

@@ -30,7 +30,7 @@
   margin: 1rem 0;
   padding: 0 1rem;
   border: 1px solid $grey-light;
-  border-radius: 5px;
+  border-radius: $component-border-radius;
 }
 
 .locationListItem {
@@ -54,7 +54,7 @@
   background-color: $primary;
   color: $white;
   border: none;
-  border-radius: 5px;
+  border-radius: $component-border-radius;
   padding: 0.5rem 1rem;
   font-weight: bold;
   transition: background-color 0.3s;

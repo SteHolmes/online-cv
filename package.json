@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "classnames": "^2.5.1",
-    "framer-motion": "^12.4.3",
+    "firebase": "^11.4.0",
+    "firebase-tools": "^13.32.0",
     "leaflet": "^1.9.4",
     "next": "15.1.6",
     "react": "^19.0.0",
@@ -30,7 +31,7 @@
     "@types/react-slick": "^0.23.13",
     "eslint": "^9",
     "eslint-config-next": "15.1.6",
-    "sass": "^1.83.4",
+    "sass": "^1.85.1",
     "typescript": "^5"
   }
 }

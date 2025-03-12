@@ -1,0 +1,241 @@
+@use "variables" as *;
+@use "breakpoints" as *;
+@use "animations" as *;
+
+* {
+  box-sizing: border-box;
+  font-family: "Quicksand", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+html,
+body {
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2 {
+  font-family: "Amatic SC", serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 5rem;
+  line-height: 4.3rem;
+  color: $white;
+}
+
+h1,h2,h3,h4,h5 {
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+h3,h4,h5 {
+  color: $grey-dark;
+}
+
+p {
+  font-weight: 300;
+  line-height: 1.25rem;
+  margin: 0;
+  margin-bottom: 0.75rem;
+}
+
+a {
+  color: inherit;
+
+  &:hover {
+    color: $primary-dark;
+    transition: color 0.3s;
+  }
+}
+
+section {
+  margin-top: 2rem;
+}
+
+label {
+  font-weight: bold;
+}
+
+.appLayout {
+  background-color: $black;
+  min-height: 100vh;
+}
+
+.pageContent {
+  padding: 20px;
+  padding-bottom: 40px;
+  min-height: $page-content-height;
+  max-width: $content-max-width;
+  margin: auto;
+  animation: slideIn 0.7s ease-out;
+}
+
+.pageTransition {
+  background-image: url('/images/stardust.png');
+  animation: fadeIn 0.7s ease-in-out;
+
+  &--geometry {
+    background-image: url('/images/inspiration-geometry.png');
+  }
+}
+
+.lightTheme {
+  background: $background-light;
+}
+
+.amaticFont {
+  font-family: "Amatic SC", serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 5rem;
+  line-height: 4.3rem;
+}
+
+.contentCard {
+  padding: 20px;
+  padding-top: 40px;
+  border: 1px solid #dddddd;
+  background: $background-light;
+  border-radius: $component-border-radius;
+}
+
+.subSection {
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+  border-radius: $component-border-radius;
+  padding: 1rem;
+  margin-top: 1.5rem;
+}
+
+.container {
+  border-radius: $component-border-radius;
+  overflow: hidden;
+  border: 1px solid $black;
+}
+
+.dualColumnLayout {
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint-min(md) {
+    flex-direction: row;
+  }
+}
+
+.column {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &--primary {
+    flex-basis: 70%;
+    background: $background-light;
+    color: $grey-dark;
+    z-index: 2;
+    padding: 1rem;
+    box-shadow: 3px 0px 10px rgba(0,0,0,0.6);
+
+    @include breakpoint-min(md) {
+      padding: 3rem 2.5rem 2rem 2.5rem;
+    } 
+  }
+
+  &--secondary {
+    display: none;
+
+    @include breakpoint-min(md) {
+      display: block;
+      flex-basis: 30%;
+      background-color: $grey-dark;
+    }
+  }
+}
+
+.pointer {
+  position: absolute;
+  right: -1;
+  width: 0; 
+  height: 0; 
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right: 20px solid $grey-dark;
+}
+
+.headingBadge {
+  position: relative;
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: $component-border-radius;
+  color: $white !important;
+  background: $primary;
+  background: linear-gradient(10deg, $primary-dark, $primary);
+  transform: translateY(20px) translateX(20px);
+  z-index: 99;
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.3);
+
+  h2, h3 {
+    color: $white !important;
+    margin-bottom: 0;
+  }
+}
+
+.introText {
+  font-weight: bold;
+}
+
+// Loading icon 
+
+.loadingIconContainer {
+  width: 100%;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loadingIcon {
+  display: inline-block;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  color: $primary;
+
+  div {
+    position: absolute;
+    border: 4px solid currentColor;
+    opacity: 1;
+    border-radius: 50%;
+    animation: loading-ripple 1.25s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+
+    &:nth-child(2) {
+      animation-delay: -0.5s;
+    }
+  }
+}
+
+// React-slick styling overrides
+
+.slick-next {
+  right: 0px !important;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: $primary !important;
+  font-size: 40px !important;
+
+  @include breakpoint-min(md) {
+    display: block !important;
+  }
+}
+
+.slick-prev,
+.slick-next {
+  display: none !important;
+
+  @include breakpoint-min(md) {
+    display: block !important;
+  }
+}

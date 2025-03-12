@@ -9,8 +9,8 @@ export default function MainNav() {
           <h2 className={styles.panelHeading}>Welcome</h2>
           <div className={`${styles.panelText} ${styles.welcomeText}`}>
             <p>Hi, I'm Steve (Stephen if I'm pulling a serious face).</p>
-            <p>I'm a <strong>front-end developer</strong> specialising in <strong>Vue and React</strong>.</p>
-            <p>This site is build with <strong>Next JS</strong>. It's part CV and part coding lab (to mess around with anything I don't get to play with in my day job).</p>
+            <p>I'm a <strong>front-end developer</strong> with over 6 years of experience, specialising in <strong>Vue and React</strong>.</p>
+            <p>This site is built with <strong>Next JS</strong>. It's part CV and part coding lab (to mess around with anything I don't get to play with in my day job).</p>
           </div>
         </div>
       </div>

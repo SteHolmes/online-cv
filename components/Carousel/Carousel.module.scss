@@ -1,10 +1,26 @@
 @use '@/styles/breakpoints' as *;
+@use '@/styles/animations' as *;
+@use '@/styles/variables' as *;
+
+.carouselContainer {
+  opacity: 0;
+  height: auto;
+
+  @include breakpoint-min(md) {
+    height: 450px;
+  }
+}
+
+.isVisible {
+  animation: fadeIn 0.3s forwards 0.3s;
+}
 
 .carousel {
   max-height: 480px;
   width: 100% !important;
   margin: auto;
   margin-bottom: 20px;
+  transition: fadeIn 0.3s;
 
   @include breakpoint-min(md) {
     width: 80% !important;
@@ -20,7 +36,7 @@
   padding: 5px;
   margin-top: 5px;
   box-shadow: 0px 0px 6px rgba(0,0,0,0.2);
-  border-radius: 5px;
+  border-radius: $component-border-radius;
 
   @include breakpoint-min(lg) {
     width: auto;

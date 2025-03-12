@@ -2,13 +2,21 @@
 
 .logoGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
   gap: 1.5rem;
   justify-items: center;
   align-items: center;
   text-align: center;
   font-weight: bold;
+
+  @include breakpoint-min(sm) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include breakpoint-min(md) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 
   @include breakpoint-min(lg) {
     grid-template-columns: repeat(5, 1fr);

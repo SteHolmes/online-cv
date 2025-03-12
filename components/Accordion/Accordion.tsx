@@ -7,8 +7,6 @@ import styles from './Accordion.module.scss'
 type AccordionProps = {
   title: string,
   details?: string,
-  // ariaTitle?: string,
-  // content: Element | string,
 }
 
 export default function Accordion ({title, details, children}: PropsWithChildren<AccordionProps>) {

@@ -103,44 +103,6 @@ export default function Experience() {
     )
   })
 
-  const skillsList = [
-    'HTML5 and CSS3 (8 years)',
-    'SCSS (5 years)',
-    'Javascript (7 years)',
-    'Vue.js (5 years)',
-    'Nuxt (2 years)',
-    'State management (VueX, Pinia) (3 years)',
-    'React (1 year)',
-    'Next JS (1 year)',
-    'Typescript (1 year)',
-    'Unit testing (Jest, Vitest, Vue Test Utils) (3 years)',
-    'Dependency management (Vite, Webpack, NPM, Yarn) (6 years)',
-    'UI and CSS libraries &ndash; Element Plus, PrimeVue, Bootstrap, Tailwind (2 years)',
-    'Accessibility and responsive design (8 years)',
-    'Git and Github/Gitlab (6 years)',
-    'APIs (4 years)',
-    'Animation for web (2 years)',
-    'Search Engine Optimisation (2 years)',
-    'Google Analytics and Hotjar (2 years)',
-    'ExpressJS (1 year)',
-  ]
-
-  // const renderedSkillsItems = skillsList.map((item, index) => {
-  //   return (
-  //     <li key={index}>{ item }</li>
-  //   )
-  // })
-
-  // const settings = {
-  //   infinite: true,
-  //   slidesToShow: 5,
-  //   slidesToScroll: 1,
-  //   autoplay: true,
-  //   speed: 2000,
-  //   autoplaySpeed: 2000,
-  //   cssEase: "linear"
-  // };
-
   return (
     <div className="pageTransition">
       <div className="pageContent">
