@@ -10,6 +10,7 @@
   background: linear-gradient(10deg, $grey-light, $white);
   box-shadow: 1px 2px 6px rgba(0,0,0,0.3);
   padding: 1rem 1rem 2rem 1rem;
+  border: 2px solid $white;
   border-radius: $component-border-radius;
   margin: 1rem 0;
 
@@ -39,6 +40,7 @@
   background: transparent;
   border: none;
   background: $grey-light;
+  border: 1px solid $white;
   border-radius: 50px;
   min-height: 35px;
   padding: 0.25rem 1.25rem 0.25rem 2.75rem;
@@ -47,7 +49,7 @@
   transition: outline 0.5s;
 
   &:focus {
-    outline: 2px solid $secondary;
+    border: 2px solid $secondary;
   }
 
   @include breakpoint-min(sm) {
