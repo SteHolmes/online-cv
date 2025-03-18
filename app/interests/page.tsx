@@ -8,6 +8,7 @@ import ImageContainer from '@/components/ImageContainer/ImageContainer'
 import BackButton from '@/components/Buttons/BackButton'
 import AnimatedSection from '@/components/AnimatedSection/AnimatedSection'
 import InteractiveMap from '@/components/InteractiveMap/InteractiveMap'
+import LoadingIcon from '@/components/LoadingIcon/LoadingIcon'
 import { db, storage } from '@/lib/firebase'
 
 export default function Interests() {
@@ -77,7 +78,11 @@ export default function Interests() {
             <p>One of my main interests outside of coding is art. I attend a local still-life drawing class once a month and regularly paint and sketch landscapes which I post on my Instagram account.</p>
             <p>I paint landscapes in oils and also keep a sketchbook of watercolour sketches as a kind of travel journal to make a note of places I've been.</p>
             
-            { !loadingImages ? (<Carousel slides={artworkImages} loading={loadingImages} />) : (<div className="loadingIconContainer"><div className="loadingIcon"><div></div><div></div></div></div>) }
+            { 
+              !loadingImages ? 
+              (<Carousel slides={artworkImages} loading={loadingImages} />) 
+              : (<LoadingIcon />) 
+            }
 
           </div>
         </section>

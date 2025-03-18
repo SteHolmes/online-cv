@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from "react"
+import { useState, useEffect } from 'react'
 import type { Place } from '@/app/api/Place'
 import styles from './InteractiveMap.module.scss'
 

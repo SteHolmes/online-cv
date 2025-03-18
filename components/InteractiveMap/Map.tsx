@@ -1,11 +1,11 @@
 'use client'
 
-import "leaflet/dist/leaflet.css"
+import 'leaflet/dist/leaflet.css'
 import type { Place } from '@/app/api/Place'
-import type { Map as LeafletMap } from "leaflet"
-import { useEffect, useRef } from "react"
+import type { Map as LeafletMap } from 'leaflet'
+import { useEffect, useRef } from 'react'
 import { icon } from 'leaflet'
-import { MapContainer, TileLayer, Marker } from "react-leaflet"
+import { MapContainer, TileLayer, Marker } from 'react-leaflet'
 import styles from './InteractiveMap.module.scss'
 
 interface MapProps {

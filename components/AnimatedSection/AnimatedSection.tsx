@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { InView } from "react-intersection-observer"
+import { InView } from 'react-intersection-observer'
 import styles from './AnimatedSection.module.scss'
 
 export default function AnimatedSection({ children }: Readonly<{children: React.ReactNode}>) {

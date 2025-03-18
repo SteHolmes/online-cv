@@ -1,10 +1,10 @@
 'use client'
 
-import React from "react"
-import Slider from "react-slick"
+import React from 'react'
+import Slider from 'react-slick'
 import Image from 'next/image'
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 import styles from './Carousel.module.scss'
 
 interface Slide {
@@ -28,7 +28,7 @@ export default function Carousel({slides, loading}: CarouselProps) {
     slidesToShow: 1,
     slidesToScroll: 1,
     dots: true,
-    dotsClass: "slick-dots slick-nav",
+    dotsClass: 'slick-dots slick-nav',
     customPaging: function(i: number) {
       return (
         <a className={styles.paginationTrigger}>

@@ -1,10 +1,11 @@
-"use client"
+import dynamic from 'next/dynamic'
 
-import { useState } from "react"
+import { useState } from 'react'
 import type { Place } from '@/app/api/Place'
-import Map from "./Map"
-import LocationList from "./LocationList"
+import LocationList from './LocationList'
 import styles from './InteractiveMap.module.scss'
+
+const Map = dynamic(() => import('./Map'), { ssr: false });
 
 export default function MapPage() {
   const [place, setPlace] = useState<Place | null>(null)
@@ -12,31 +13,31 @@ export default function MapPage() {
   const defaultPlaceList = [
     {
       id: 123,
-      name: "Glencoe",
+      name: 'Glencoe',
       lat: 56.6823843,
       long: -5.1025012
     },
     {
       id: 234,
-      name: "Isle of Skye",
+      name: 'Isle of Skye',
       lat: 57.6464172,
       long: -6.3148327
     },
     {
       id: 345,
-      name: "Giant's Causeway",
+      name: 'Giant\'s Causeway',
       lat: 55.2301062,
       long: -6.5227638
     },
     {
       id: 456,
-      name: "Brecon Beacons",
+      name: 'Brecon Beacons',
       lat: 51.8840603,
       long: -3.4467424
     },
     {
       id: 567,
-      name: "The Jurassic Coast",
+      name: 'The Jurassic Coast',
       lat: 50.6212706,
       long: -2.2792745
     },

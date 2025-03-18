@@ -89,12 +89,12 @@ export default function Experience() {
   })
 
   const trainingList = [
-    "Intensive one-week Javascript course - StayAhead Training, London",
-    "Colt Steele's Web Developer Bootcamp - Udemy",
-    "Colt Steele's Advanced Web Developer Bootcamp (React Track) - Udemy",
-    "Stephen Grider's Modern React with Redux - Udemy",
-    "Vue Fundamentals - Pluralsight",
-    "React Fundamentals - Pluralsight",
+    'Intensive one-week Javascript course - StayAhead Training, London',
+    'Colt Steele\'s Web Developer Bootcamp - Udemy',
+    'Colt Steele\'s Advanced Web Developer Bootcamp (React Track) - Udemy',
+    'Stephen Grider\'s Modern React with Redux - Udemy',
+    'Vue Fundamentals - Pluralsight',
+    'React Fundamentals - Pluralsight',
   ]
 
   const renderedTrainingItems = trainingList.map((item, index) => {
