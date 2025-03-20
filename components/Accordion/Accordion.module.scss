@@ -39,7 +39,7 @@
   .panelIcon {
     width: 1rem;
     height: 1rem;
-    fill: $primary;
+    color: $primary;
     transition: transform 500ms;
   
     @include breakpoint-min(md) {

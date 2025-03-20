@@ -110,12 +110,12 @@ export default function Experience() {
         <h1>Experience</h1>
         <section>
           <div className="headingBadge"><h3>Work Experience</h3></div>
-          <div className="contentCard">{ renderedWorkExperience }</div>
+          <div className="contentCard contentCard--titled">{ renderedWorkExperience }</div>
         </section>
   
         <AnimatedSection>
           <div className="headingBadge"><h3>Education</h3></div>
-          <div className="contentCard">
+          <div className="contentCard contentCard--titled">
             <p>BA (Hons) 2:1 in Graphic Design</p>
             <p>Sheffield Hallam University – Sheffield</p>
             <p>September 2005 to July 2008</p>
@@ -128,7 +128,7 @@ export default function Experience() {
         </AnimatedSection>
         <AnimatedSection>
           <div className="headingBadge"><h3>Skills Overview</h3></div>
-          <div className="contentCard"><LogoGrid /></div>
+          <div className="contentCard contentCard--titled"><LogoGrid /></div>
         </AnimatedSection>
       </div>
     </div>

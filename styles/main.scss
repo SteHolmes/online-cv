@@ -2,6 +2,10 @@
 @use "breakpoints" as *;
 @use "animations" as *;
 
+:root {
+  --toastify-color-progress-light: linear-gradient(to right, #4f201e, #36b0b5);
+}
+
 * {
   box-sizing: border-box;
   font-family: "Quicksand", serif;
@@ -50,10 +54,6 @@ a {
   }
 }
 
-section {
-  margin-top: 2rem;
-}
-
 label {
   font-weight: bold;
 }
@@ -70,6 +70,17 @@ label {
   max-width: $content-max-width;
   margin: auto;
   animation: slideIn 0.7s ease-out;
+
+  &--centred {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  section {
+    width: 100%;
+    margin-top: 2rem;
+  }
 }
 
 .pageTransition {
@@ -95,13 +106,17 @@ label {
 
 .contentCard {
   padding: 20px;
-  padding-top: 40px;
   border: 1px solid #dddddd;
   background: $background-light;
   border-radius: $component-border-radius;
+
+  &--titled {
+    padding-top: 40px;
+  }
 }
 
 .subSection {
+  background: $background-light;
   box-shadow: 1px 1px 4px rgba(0,0,0,0.3);
   border-radius: $component-border-radius;
   padding: 1rem;
@@ -120,6 +135,11 @@ label {
 
   @include breakpoint-min(md) {
     flex-direction: row;
+  }
+
+  &--centered {
+    align-items: center;
+    gap: 1rem;
   }
 }
 
@@ -151,6 +171,15 @@ label {
       background-color: $grey-dark;
     }
   }
+}
+
+.imageContent {
+  border-radius: $component-border-radius;
+}
+
+.pageLink {
+  color: $primary-dark;
+  font-weight: bold;
 }
 
 .pointer {

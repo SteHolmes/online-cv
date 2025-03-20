@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import styles from './MainNav.module.scss'
 
 export default function MainNav() {
@@ -18,8 +20,7 @@ export default function MainNav() {
         <Link className={`${styles.panelLink} ${styles.panelInner}`} href="/experience">
           <h2 className={styles.panelHeading}>
             Experience
-            {/* Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc. */}
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>          
+            <FontAwesomeIcon icon={faArrowRight} />
           </h2>
           <p className={styles.panelText}>No I haven't been to the Moon (yet), but here you'll find details of my previous employment, past projects and experience.</p>
         </Link>
@@ -28,8 +29,7 @@ export default function MainNav() {
         <Link className={`${styles.panelLink} ${styles.panelInner}`} href="/interests">
           <h2 className={styles.panelHeading}>
             Interests
-            {/* Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc. */}
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+            <FontAwesomeIcon icon={faArrowRight} />
           </h2>
           <p className={styles.panelText}>Hobbies and interests outside of work...</p>
         </Link>

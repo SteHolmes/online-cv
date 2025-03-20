@@ -4,6 +4,7 @@
 .appFooter {
   position: relative;
   display: flex;
+  align-items: center;
   gap: 0.5rem;
   background: $black;
   bottom: 0;
@@ -11,8 +12,12 @@
   color: $white;
   padding: 1rem 2rem;
   min-height: $footer-height;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   border-top: 1px solid $grey-dark;
+
+  p {
+    margin: 0;
+  }
 }
 
 .linkList {

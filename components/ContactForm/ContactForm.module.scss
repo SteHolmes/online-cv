@@ -1,5 +1,6 @@
 @use "@/styles/variables" as *;
 @use '@/styles/breakpoints' as *;
+@use '@/styles/animations' as *;
 
 .contactForm {
   display: flex;
@@ -7,7 +8,7 @@
   align-items: center;
   gap: 1rem;
   color: $primary;
-  background: linear-gradient(10deg, $grey-light, $white);
+  background: linear-gradient(330deg, $grey-light, $white 30%);
   box-shadow: 1px 2px 6px rgba(0,0,0,0.3);
   padding: 1rem 1rem 2rem 1rem;
   border: 2px solid $white;
@@ -45,7 +46,7 @@
   min-height: 35px;
   padding: 0.25rem 1.25rem 0.25rem 2.75rem;
   outline: 2px solid transparent;
-  box-shadow: inset -1px 1px 5px rgba(0,0,0,0.4);
+  box-shadow: inset 1px 1px 5px rgba(0,0,0,0.4);
   transition: outline 0.5s;
 
   &:focus {
@@ -82,17 +83,17 @@
   width: 100%;
   max-width: 150px;
   padding: 10px;
-  background: transparent;
-  border: 2px solid $primary;
+  background: $primary;
+  border: none;
   border-radius: 50px;
-  color: $primary;
+  color: $white;
   font-size: 1rem;
   font-weight: bold;
   box-shadow: 0px 2px 7px rgba(0,0,0,0.4);
 
   &:hover,
   &:active {
-    background-color: $primary;
+    background-color: $primary-dark;
     color: $white;
     box-shadow: none;
     transform: translateY(2px);
@@ -106,21 +107,26 @@
 }
 
 .submitMessage {
-  font-weight: bold;
-  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 350px;
+  animation: fadeIn 0.5s forwards;
 
   span {
     display: flex;
     align-items: center;
-    padding: 1rem;
+    padding: 2rem 3rem 2rem 2.5rem;
     border: 1px solid $grey-light;
     border-radius: $component-border-radius;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
   }
 
   svg {
-    width: 3rem;
-    height: 3rem;
-    fill: $primary;
+    width: 2rem;
+    height: 2rem;
+    color: $primary;
     margin-right: 0.75rem;
+    margin-top: -10px;
   }
 }
