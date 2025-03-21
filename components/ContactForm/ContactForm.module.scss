@@ -1,21 +1,21 @@
-@use "@/styles/variables" as *;
-@use '@/styles/breakpoints' as *;
-@use '@/styles/animations' as *;
+@use "@/styles/variables" as vars;
+@use '@/styles/breakpoints' as breakpts;
+@use '@/styles/animations';
 
 .contactForm {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  color: $primary;
-  background: linear-gradient(330deg, $grey-light, $white 30%);
+  color: vars.$primary;
+  background: linear-gradient(330deg, vars.$grey-light, vars.$white 30%);
   box-shadow: 1px 2px 6px rgba(0,0,0,0.3);
   padding: 1rem 1rem 2rem 1rem;
-  border: 2px solid $white;
-  border-radius: $component-border-radius;
+  border: 2px solid vars.$white;
+  border-radius: vars.$component-border-radius;
   margin: 1rem 0;
 
-  @include breakpoint-min(sm) {
+  @include breakpts.breakpoint-min(sm) {
     padding: 2rem;
   }
 }
@@ -40,8 +40,8 @@
   width: 100%;
   background: transparent;
   border: none;
-  background: $grey-light;
-  border: 1px solid $white;
+  background: vars.$grey-light;
+  border: 1px solid vars.$white;
   border-radius: 50px;
   min-height: 35px;
   padding: 0.25rem 1.25rem 0.25rem 2.75rem;
@@ -50,10 +50,10 @@
   transition: outline 0.5s;
 
   &:focus {
-    border: 2px solid $secondary;
+    border: 2px solid vars.$secondary;
   }
 
-  @include breakpoint-min(sm) {
+  @include breakpts.breakpoint-min(sm) {
     min-height: 45px;
   }
 }
@@ -72,7 +72,7 @@
     position: absolute;
     width: 1rem;
     height: 1rem;
-    fill: $primary;
+    fill: vars.$primary;
     left: 1rem;
   }
 }
@@ -83,25 +83,25 @@
   width: 100%;
   max-width: 150px;
   padding: 10px;
-  background: $primary;
+  background: vars.$primary;
   border: none;
   border-radius: 50px;
-  color: $white;
+  color: vars.$white;
   font-size: 1rem;
   font-weight: bold;
   box-shadow: 0px 2px 7px rgba(0,0,0,0.4);
 
   &:hover,
   &:active {
-    background-color: $primary-dark;
-    color: $white;
+    background-color: vars.$primary-dark;
+    color: vars.$white;
     box-shadow: none;
     transform: translateY(2px);
     transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
     cursor: pointer;
   }
 
-  @include breakpoint-min(sm) {
+  @include breakpts.breakpoint-min(sm) {
     margin-top: 2rem;
   }
 }
@@ -117,15 +117,15 @@
     display: flex;
     align-items: center;
     padding: 2rem 3rem 2rem 2.5rem;
-    border: 1px solid $grey-light;
-    border-radius: $component-border-radius;
+    border: 1px solid vars.$grey-light;
+    border-radius: vars.$component-border-radius;
     box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
   }
 
   svg {
     width: 2rem;
     height: 2rem;
-    color: $primary;
+    color: vars.$primary;
     margin-right: 0.75rem;
     margin-top: -10px;
   }

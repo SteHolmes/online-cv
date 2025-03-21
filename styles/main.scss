@@ -1,6 +1,6 @@
-@use "variables" as *;
-@use "breakpoints" as *;
-@use "animations" as *;
+@use "variables" as vars;
+@use "breakpoints" as breakpts;
+@use "animations";
 
 :root {
   --toastify-color-progress-light: linear-gradient(to right, #4f201e, #36b0b5);
@@ -24,9 +24,13 @@ h1, h2 {
   font-family: "Amatic SC", serif;
   font-weight: 300;
   font-style: normal;
-  font-size: 5rem;
+  font-size: 4rem;
   line-height: 4.3rem;
-  color: $white;
+  color: vars.$white;
+
+  @include breakpts.breakpoint-min(md) {
+    font-size: 5rem;
+  }
 }
 
 h1,h2,h3,h4,h5 {
@@ -35,7 +39,7 @@ h1,h2,h3,h4,h5 {
 }
 
 h3,h4,h5 {
-  color: $grey-dark;
+  color: vars.$grey-dark;
 }
 
 p {
@@ -49,7 +53,7 @@ a {
   color: inherit;
 
   &:hover {
-    color: $primary-dark;
+    color: vars.$primary-dark;
     transition: color 0.3s;
   }
 }
@@ -59,15 +63,15 @@ label {
 }
 
 .appLayout {
-  background-color: $black;
+  background-color: vars.$black;
   min-height: 100vh;
 }
 
 .pageContent {
   padding: 20px;
   padding-bottom: 40px;
-  min-height: $page-content-height;
-  max-width: $content-max-width;
+  min-height: vars.$page-content-height;
+  max-width: vars.$content-max-width;
   margin: auto;
   animation: slideIn 0.7s ease-out;
 
@@ -79,7 +83,7 @@ label {
 
   section {
     width: 100%;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
   }
 }
 
@@ -93,7 +97,7 @@ label {
 }
 
 .lightTheme {
-  background: $background-light;
+  background: vars.$background-light;
 }
 
 .amaticFont {
@@ -107,8 +111,8 @@ label {
 .contentCard {
   padding: 20px;
   border: 1px solid #dddddd;
-  background: $background-light;
-  border-radius: $component-border-radius;
+  background: vars.$background-light;
+  border-radius: vars.$component-border-radius;
 
   &--titled {
     padding-top: 40px;
@@ -116,24 +120,24 @@ label {
 }
 
 .subSection {
-  background: $background-light;
+  background: vars.$background-light;
   box-shadow: 1px 1px 4px rgba(0,0,0,0.3);
-  border-radius: $component-border-radius;
+  border-radius: vars.$component-border-radius;
   padding: 1rem;
   margin-top: 1.5rem;
 }
 
 .container {
-  border-radius: $component-border-radius;
+  border-radius: vars.$component-border-radius;
   overflow: hidden;
-  border: 1px solid $black;
+  border: 1px solid vars.$black;
 }
 
 .dualColumnLayout {
   display: flex;
   flex-direction: column;
 
-  @include breakpoint-min(md) {
+  @include breakpts.breakpoint-min(md) {
     flex-direction: row;
   }
 
@@ -151,13 +155,13 @@ label {
 
   &--primary {
     flex-basis: 70%;
-    background: $background-light;
-    color: $grey-dark;
+    background: vars.$background-light;
+    color: vars.$grey-dark;
     z-index: 2;
     padding: 1rem;
     box-shadow: 3px 0px 10px rgba(0,0,0,0.6);
 
-    @include breakpoint-min(md) {
+    @include breakpts.breakpoint-min(md) {
       padding: 3rem 2.5rem 2rem 2.5rem;
     } 
   }
@@ -165,20 +169,20 @@ label {
   &--secondary {
     display: none;
 
-    @include breakpoint-min(md) {
+    @include breakpts.breakpoint-min(md) {
       display: block;
       flex-basis: 30%;
-      background-color: $grey-dark;
+      background-color: vars.$grey-dark;
     }
   }
 }
 
 .imageContent {
-  border-radius: $component-border-radius;
+  border-radius: vars.$component-border-radius;
 }
 
 .pageLink {
-  color: $primary-dark;
+  color: vars.$primary-dark;
   font-weight: bold;
 }
 
@@ -189,23 +193,23 @@ label {
   height: 0; 
   border-top: 20px solid transparent;
   border-bottom: 20px solid transparent;
-  border-right: 20px solid $grey-dark;
+  border-right: 20px solid vars.$grey-dark;
 }
 
 .headingBadge {
   position: relative;
   display: inline-block;
   padding: 5px 15px;
-  border-radius: $component-border-radius;
-  color: $white !important;
-  background: $primary;
-  background: linear-gradient(10deg, $primary-dark, $primary);
+  border-radius: vars.$component-border-radius;
+  color: vars.$white !important;
+  background: vars.$primary;
+  background: linear-gradient(10deg, vars.$primary-dark, vars.$primary);
   transform: translateY(20px) translateX(20px);
   z-index: 99;
   box-shadow: 0px 1px 3px rgba(0,0,0,0.3);
 
   h2, h3 {
-    color: $white !important;
+    color: vars.$white !important;
     margin-bottom: 0;
   }
 }
@@ -222,10 +226,10 @@ label {
 
 .slick-prev:before,
 .slick-next:before {
-  color: $primary !important;
+  color: vars.$primary !important;
   font-size: 40px !important;
 
-  @include breakpoint-min(md) {
+  @include breakpts.breakpoint-min(md) {
     display: block !important;
   }
 }
@@ -234,7 +238,7 @@ label {
 .slick-next {
   display: none !important;
 
-  @include breakpoint-min(md) {
+  @include breakpts.breakpoint-min(md) {
     display: block !important;
   }
 }

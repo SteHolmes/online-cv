@@ -1,12 +1,12 @@
-@use '@/styles/breakpoints' as *;
-@use '@/styles/animations' as *;
-@use '@/styles/variables' as *;
+@use '@/styles/breakpoints' as breakpts;
+@use '@/styles/variables' as vars;
+@use '@/styles/animations';
 
 .carouselContainer {
   opacity: 0;
   height: auto;
 
-  @include breakpoint-min(md) {
+  @include breakpts.breakpoint-min(md) {
     height: 450px;
   }
 }
@@ -22,7 +22,7 @@
   margin-bottom: 20px;
   transition: fadeIn 0.3s;
 
-  @include breakpoint-min(md) {
+  @include breakpts.breakpoint-min(md) {
     width: 80% !important;
     margin-bottom: 30px;
   }
@@ -36,9 +36,9 @@
   padding: 5px;
   margin-top: 5px;
   box-shadow: 0px 0px 6px rgba(0,0,0,0.2);
-  border-radius: $component-border-radius;
+  border-radius: vars.$component-border-radius;
 
-  @include breakpoint-min(lg) {
+  @include breakpts.breakpoint-min(lg) {
     width: auto;
   }
 }

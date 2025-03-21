@@ -1,6 +1,6 @@
-@use '@/styles/_breakpoints.scss' as *;
-@use "@/styles/variables" as *;
-@use "@/styles/animations" as *;
+@use '@/styles/_breakpoints.scss' as breakpts;
+@use "@/styles/variables" as vars;
+@use "@/styles/animations";
 
 .mainNav {
 position: relative;
@@ -8,13 +8,13 @@ width: 100%;
 z-index: 1;
 display: grid;
 grid-template-rows: 1fr 1fr 1fr;
-min-height: $page-content-height;
+min-height: vars.$page-content-height;
 opacity: 0;
 animation: fadeIn 0.4s 0.3s forwards;
 
   &::after {
     content: "";
-    background: linear-gradient(to right, $primary-darkest 20%, $grey-dark 60%);
+    background: linear-gradient(to right, vars.$primary-darkest 20%, vars.$grey-dark 60%);
     position: fixed;
     top: 0;
     right: 0;
@@ -23,7 +23,7 @@ animation: fadeIn 0.4s 0.3s forwards;
     mix-blend-mode: multiply;
   }
 
-  @include breakpoint-min(lg) {
+  @include breakpts.breakpoint-min(lg) {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: none;
@@ -59,18 +59,18 @@ animation: fadeIn 0.4s 0.3s forwards;
   align-items: center;
   gap: 1.5rem;
 
-  @include breakpoint-min(lg) {
+  @include breakpts.breakpoint-min(lg) {
     font-size: 5rem;
   }
 
   svg {
     width: auto;
     height: 3rem;
-    fill: $white;
+    fill: vars.$white;
     margin-bottom: -7px;
     transition: transform 0.2s ease;
 
-    @include breakpoint-min(lg) {
+    @include breakpts.breakpoint-min(lg) {
       height: 4rem;
     }
 
@@ -87,9 +87,9 @@ animation: fadeIn 0.4s 0.3s forwards;
   height: 100%;
   width: 100%;
   padding: 1rem;
-  border-top: 1px solid $primary-dark;
+  border-top: 1px solid vars.$primary-dark;
 
-  @include breakpoint-min(lg) {
+  @include breakpts.breakpoint-min(lg) {
     position: absolute;
     padding: 2rem 0;
     padding-top: 30vh;
@@ -100,7 +100,7 @@ animation: fadeIn 0.4s 0.3s forwards;
 
 .panelLink {
   &:hover::after {
-    background: linear-gradient(to top, $primary 30%, $grey-dark);
+    background: linear-gradient(to top, vars.$primary 30%, vars.$grey-dark);
     opacity: 0.5;
   }
 
@@ -128,7 +128,7 @@ animation: fadeIn 0.4s 0.3s forwards;
   color: white;
   padding: 0 1rem;
 
-  @include breakpoint-min(lg) {
+  @include breakpts.breakpoint-min(xl) {
     padding: 0 3rem;
   }
 }

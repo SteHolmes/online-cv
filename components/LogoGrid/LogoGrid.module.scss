@@ -1,4 +1,4 @@
-@use '@/styles/breakpoints' as *;
+@use '@/styles/breakpoints' as breakpts;
 
 .logoGrid {
   display: grid;
@@ -10,15 +10,15 @@
   text-align: center;
   font-weight: bold;
 
-  @include breakpoint-min(sm) {
+  @include breakpts.breakpoint-min(sm) {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  @include breakpoint-min(md) {
+  @include breakpts.breakpoint-min(md) {
     grid-template-columns: repeat(4, 1fr);
   }
 
-  @include breakpoint-min(lg) {
+  @include breakpts.breakpoint-min(lg) {
     grid-template-columns: repeat(5, 1fr);
   }
 }

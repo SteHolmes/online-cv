@@ -1,5 +1,5 @@
-@use "@/styles/variables" as *;
-@use "@/styles/animations" as *;
+@use "@/styles/variables" as vars;
+@use "@/styles/animations";
 
 .loadingIconContainer {
   width: 100%;
@@ -14,7 +14,7 @@
   position: relative;
   width: 100px;
   height: 100px;
-  color: $primary;
+  color: vars.$primary;
 
   div {
     position: absolute;

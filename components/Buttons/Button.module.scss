@@ -1,4 +1,4 @@
-@use "@/styles/variables" as *;
+@use "@/styles/variables" as vars;
 
 .buttonBack {
   display: flex;
@@ -8,15 +8,15 @@
   background: transparent;
   margin-bottom: 20px;
   cursor: pointer;
-  color: $primary;
+  color: vars.$primary;
   gap: 5px;
   transition: color 0.3s;
 
   &:hover {
-    color: $secondary;
+    color: vars.$secondary;
 
     svg {
-      fill: $secondary;
+      fill: vars.$secondary;
       transform: translateX(-5px);
     }
   }
@@ -24,7 +24,7 @@
   svg {
     width: 1rem;
     height: 1rem;
-    fill: $primary;
+    fill: vars.$primary;
     transition: fill, transform 0.3s;
   }
 }

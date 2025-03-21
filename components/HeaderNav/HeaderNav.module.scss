@@ -1,17 +1,17 @@
-@use '@/styles/variables' as *;
-@use '@/styles/breakpoints' as *;
-@use '@/styles/animations' as *;
+@use '@/styles/variables' as vars;
+@use '@/styles/breakpoints' as breakpts;
+@use '@/styles/animations';
 
 .appHeader {
   position: relative;
   width: 100%;
-  height: $header-height;
+  height: vars.$header-height;
   color: white;
   z-index: 2;
   padding: 0 1.5rem;
   box-sizing: border-box;
 
-  @include breakpoint-min(md) {
+  @include breakpts.breakpoint-min(md) {
     padding: 0 3rem;
   }
 }
@@ -26,7 +26,7 @@
 .colourBanner {
   position: absolute;
   display: flex;
-  background: $black;
+  background: vars.$black;
   z-index: -1;
   left: 0;
   top: 0;
@@ -39,7 +39,7 @@
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: $header-border-height;
+  height: vars.$header-border-height;
   background: linear-gradient(to right, #00d8ff, #00ffcb, transparent);
   transform:translateX(-100%);
   animation: expand 0.5s ease-in-out forwards 0.1s;
@@ -53,7 +53,7 @@
 }
 
 .highlightedText {
-  color: $secondary;
+  color: vars.$secondary;
   margin-right: 0.5rem;
 }
 
@@ -61,7 +61,7 @@
   font-size: 1.25rem;
   font-weight: 300;
   
-  @include breakpoint-min(md) {
+  @include breakpts.breakpoint-min(md) {
     display: flex;
     align-items: center;
     gap: 0.75rem;
@@ -72,7 +72,7 @@
 .headingSubText {
   font-size: small;
 
-  @include breakpoint-min(md) {
+  @include breakpts.breakpoint-min(md) {
     font-size: 1.15rem;
   }
 }
@@ -80,16 +80,16 @@
 .navLink {
   display: flex;
   align-items: center;
-  color: white;
+  color: vars.$white;
   text-decoration: none;
   gap: 0.5rem;
   transition: color 0.3s;
 
   &:hover {
-    color: $secondary;
+    color: vars.$secondary;
 
     svg {
-      fill: $secondary;
+      fill: vars.$secondary;
       transition: fill 0.3s;
     }
   }
@@ -98,5 +98,5 @@
 .navLinkIcon {
   width: 1rem;
   height: 1rem;
-  fill: $white;
+  fill: vars.$white;
 }

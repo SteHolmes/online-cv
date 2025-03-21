@@ -1,19 +1,18 @@
-@use '@/styles/variables' as *;
-@use '@/styles/breakpoints' as *;
+@use '@/styles/variables' as vars;
 
 .appFooter {
   position: relative;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background: $black;
+  background: vars.$black;
   bottom: 0;
   z-index: 2;
-  color: $white;
+  color: vars.$white;
   padding: 1rem 2rem;
-  min-height: $footer-height;
+  min-height: vars.$footer-height;
   font-size: 0.9rem;
-  border-top: 1px solid $grey-dark;
+  border-top: 1px solid vars.$grey-dark;
 
   p {
     margin: 0;
@@ -28,23 +27,23 @@
   list-style: none;
 
   a {
-    color: $white;
+    color: vars.$white;
     text-decoration: none;
     transition: color 0.3s;
 
     &:hover {
-      color: $primary;
+      color: vars.$primary;
     }
   }
 }
 
 .socialIcon {
-  fill: $white;
+  fill: vars.$white;
   width: 1.25rem;
   height: 1.25rem;
   transition: fill 0.2s;
 
   &:hover {
-    fill: $primary;
+    fill: vars.$primary;
   }
 }
