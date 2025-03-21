@@ -10,7 +10,7 @@ display: grid;
 grid-template-rows: 1fr 1fr 1fr;
 min-height: $page-content-height;
 opacity: 0;
-animation: fadeIn 0.7s 0.4s forwards;
+animation: fadeIn 0.4s 0.3s forwards;
 
   &::after {
     content: "";
