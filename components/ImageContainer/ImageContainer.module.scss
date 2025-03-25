@@ -9,15 +9,10 @@
   gap: 10px;
   width: 100%;
   flex-direction: column;
-  opacity: 0;
 
   @include breakpts.breakpoint-min(lg) {
     flex-direction: row;
   }
-}
-
-.isVisible {
-  animation: fadeIn 0.3s forwards 0.3s;
 }
 
 .imageItem {

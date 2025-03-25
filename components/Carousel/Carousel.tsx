@@ -1,6 +1,5 @@
 'use client'
 
-import React from 'react'
 import Slider from 'react-slick'
 import Image from 'next/image'
 import 'slick-carousel/slick/slick.css'
@@ -15,11 +14,12 @@ interface Slide {
 }
 
 interface CarouselProps {
-  slides: Slide[],
-  loading: boolean,
+  slides: Slide[] | undefined,
+  priority?: boolean
+  loading?: boolean,
 }
 
-export default function Carousel({slides, loading}: CarouselProps) {
+export default function Carousel({slides, priority, loading}: CarouselProps) {
   const settings = {
     centerMode: true,
     infinite: true,
@@ -30,6 +30,8 @@ export default function Carousel({slides, loading}: CarouselProps) {
     dots: true,
     dotsClass: 'slick-dots slick-nav',
     customPaging: function(i: number) {
+      if (!slides) return (<></>)
+
       return (
         <a className={styles.paginationTrigger}>
           <Image className={styles.carouselThumbnail} src={slides[i].imgSrc} width={30} height={20} alt={slides[i].altText} />
@@ -56,7 +58,7 @@ export default function Carousel({slides, loading}: CarouselProps) {
     ]
   }
 
-  const renderedSlides = slides.map((slide) => {
+  const renderedSlides = slides?.map((slide) => {
     return <div key={slide.id}>
         <Image 
           className={styles.carouselImage}
@@ -64,15 +66,20 @@ export default function Carousel({slides, loading}: CarouselProps) {
           width={500}
           height={400}
           alt={slide.altText}
+          priority={priority}
         />
     </div>
   })
+
+  const carouselContent = slides ? 
+  (<Slider {...settings} className={styles.carousel}>
+    { renderedSlides }
+  </Slider>)
+  : (<p>Images could not be displayed.</p>)
   
   return (
     <div className={`${styles.carouselContainer} ${!loading ? `${styles.isVisible}` : ''}`}>
-      <Slider {...settings} className={styles.carousel}>
-        { renderedSlides }
-      </Slider>
+      { carouselContent }
     </div>
   )
 }

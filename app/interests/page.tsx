@@ -1,70 +1,13 @@
-'use client'
-
-import { useCallback, useEffect, useState } from 'react'
-import { collection, getDocs, QueryDocumentSnapshot } from 'firebase/firestore'
-import { ref, getDownloadURL } from 'firebase/storage'
+import fetchImages from '@/lib/fetchImages'
 import Carousel from '@/components/Carousel/Carousel'
 import ImageContainer from '@/components/ImageContainer/ImageContainer'
 import BackButton from '@/components/Buttons/BackButton'
 import AnimatedSection from '@/components/AnimatedSection/AnimatedSection'
 import InteractiveMap from '@/components/InteractiveMap/InteractiveMap'
-import LoadingIcon from '@/components/LoadingIcon/LoadingIcon'
-import { db, storage } from '@/lib/firebase'
 
-export default function Interests() {
-  const [loadingImages, setLoadingImages] = useState(false)
-  const [artworkImages, setArtworkImages] = useState<Image[]>([])
-  const [hikingImages, setHikingImages] = useState<Image[]>([])
-
-  const formatImageData = async (docsArray: QueryDocumentSnapshot[]) => {
-    return docsArray.map(async (doc: QueryDocumentSnapshot) => {
-      const imageRef = ref(storage, doc.data().imgSrc)
-      const imageUrl = await getDownloadURL(imageRef)
-
-      return {
-        id: doc.id,
-        altText: doc.data().altText,
-        imgSrc: imageUrl,
-        order: doc.data().order,
-      }
-    })
-  }
-
-  const sortImagesByOrderProp = (data: Image[]) => {
-    return data.sort((a, b) => a.order - b.order)
-  }
-
-  const fetchImages = useCallback(async () => {
-    setLoadingImages(true)
-
-    try {
-      const artworkSnapshot = await getDocs(collection(db, 'artwork'))
-      const hikesSnapshot = await getDocs(collection(db, 'hikes'))
-
-      const formattedArtwork = await formatImageData(artworkSnapshot.docs)
-      const artworkImageData = await Promise.all(formattedArtwork)
-
-      const formattedHikes = await formatImageData(hikesSnapshot.docs)
-      const hikesImageData = await Promise.all(formattedHikes)
-
-      setArtworkImages(sortImagesByOrderProp(artworkImageData))
-      setHikingImages(sortImagesByOrderProp(hikesImageData))
-  
-    } catch(error) {
-      console.error(error)
-    } finally {
-      setLoadingImages(false)
-    }
-  }, [])
-
-  useEffect(() => {
-    if (!db) {
-      console.error('Firestore instance is not available');
-      return;
-    }
-  
-    fetchImages()
-  }, [fetchImages])
+export default async function Interests() {
+  const artworkImages: Image[] | undefined = await fetchImages('artwork')
+  const hikingImages: Image[] | undefined = await fetchImages('hikes')
 
   return (
     <div className="pageTransition pageTransition--geometry">
@@ -75,14 +18,8 @@ export default function Interests() {
           <div className="headingBadge"><h3>Drawing and painting</h3></div>
           <div className="contentCard contentCard--titled">
             <p>One of my main interests outside of coding is art. I attend a local still-life drawing class once a month and regularly paint and sketch landscapes which I post on my Instagram account.</p>
-            <p>I paint landscapes in oils and also keep a sketchbook of watercolour sketches as a kind of travel journal to make a note of places I've been.</p>
-            
-            { 
-              !loadingImages ? 
-              (<Carousel slides={artworkImages} loading={loadingImages} />) 
-              : (<LoadingIcon />) 
-            }
-
+            <p>I paint landscapes in oils and also keep a sketchbook of watercolour sketches as a kind of travel journal to make a note of places I've been.</p>            
+            <Carousel slides={artworkImages} priority={true} />
           </div>
         </section>
         <AnimatedSection>
@@ -98,7 +35,7 @@ export default function Interests() {
             <p>I live on the edge of the Peak District and love hiking! I never get bored of the views, and often take a sketchbook out to scribble down a particularly good view or interesting elements of the landscape.</p>
             <p>In the past few years I've also got into wild camping and made trips to Snowdonia and the Lake District with friends; tents on our backs, heading up mountains to set up camp on the summit and catch the sunset.</p>
             <div className="subSection">
-              { !loadingImages ? (<ImageContainer images={hikingImages} loading={loadingImages} />) : (<div className="loadingIconContainer"><div className="loadingIcon"><div></div><div></div></div></div>) }
+              <ImageContainer images={hikingImages} />
             </div>
             <section>
               <h3>Wish List</h3>

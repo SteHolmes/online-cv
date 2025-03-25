@@ -1,14 +1,18 @@
+'use client'
+
 import dynamic from 'next/dynamic'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import type { Place } from '@/app/api/Place'
 import LocationList from './LocationList'
+import LoadingIcon from '@/components/LoadingIcon/LoadingIcon'
 import styles from './InteractiveMap.module.scss'
 
 const Map = dynamic(() => import('./Map'), { ssr: false });
 
 export default function MapPage() {
   const [place, setPlace] = useState<Place | null>(null)
+  const [loading, setLoading] = useState<boolean>(true)
 
   const defaultPlaceList = [
     {
@@ -43,13 +47,17 @@ export default function MapPage() {
     },
   ]
 
+  useEffect(() => {
+    setLoading(false)
+  }, [])
+
   return (
     <div className={styles.interactiveMap}>
       <div className={styles.listCol}>
         <LocationList defaultList={defaultPlaceList} onPlaceClick={(p) => setPlace(p)} />
       </div>
       <div className={styles.mapCol}>
-        <Map place={place} />
+        { loading ? <LoadingIcon /> : <Map place={place} /> }
       </div>
     </div>
   )
