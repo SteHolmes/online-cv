@@ -8,7 +8,7 @@ export default function MainNav() {
     <nav className={styles.mainNav}>
       <div className={`${styles.panel} ${styles.panelOne}`}>
         <div className={styles.panelInner}>
-          <h2 className={styles.panelHeading}>Welcome</h2>
+          <h2 className={`${styles.panelHeading} ${styles.highlightedHeading}`}>Welcome</h2>
           <div className={`${styles.panelText} ${styles.welcomeText}`}>
             <p>Hi, I'm Steve (Stephen if I'm pulling a serious face).</p>
             <p>I'm a <strong>front-end developer</strong> with over 6 years of experience, specialising in <strong>Vue and React</strong>.</p>

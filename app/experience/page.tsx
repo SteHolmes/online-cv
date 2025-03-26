@@ -18,16 +18,17 @@ export default function Experience() {
         <ul>
           <li>Vue 2/3 (Full rebuild of two apps and upgrade of a third to improve app performance and make use of Vue 3 features to improve dev efficiency)</li>
           <li>Nuxt 2 and Nuxt Bridge (worked on upgrade to secure vulnerabilities and reduce technical debt)</li>
-          <li>React (Redesign and rebuild of a &lsquo;first-aid requirements calculator&rsquo; app re-written in React including Redux and Typescript)</li>
+          <li>React (Redesign and rebuild of legacy app in React and Typescript)</li>
           <li>Vue CLI, Vite and Webpack</li>
           <li>Typescript (Use TS on any new or upgraded apps to create more robust code and reduce bugs)</li>
-          <li>State management (Pinia, Redux, VueX)</li>
-          <li>Unit testing - Jest, Vitest and Vue Test Utils</li>
-          <li>Monitoring user behaviour with Google Analytics and Hotjar to inform improvements and updates.</li>
+          <li>State management (Pinia, VueX)</li>
+          <li>Unit testing - Jest, Vitest, Vue Test Utils and React Testing Library</li>
+          <li>Monitoring user behaviour with Google Analytics/Hotjar to inform improvements and updates</li>
           <li>Axios, APIs and handling authentication with JWTs</li>
           <li>UI libraries (Element+, PrimeVue)</li>
+          <li>Knowledge of atomic design principles to create modular, reusable code</li>
           <li>Designing components, UI/UX and brand guidelines (Figma, Histoire and Inkscape)</li>
-          <li>Accessibility standards / keyboard and screen-reader testing (to improve UX and increase potential for selling services to public sector organisations)</li>
+          <li>WCAG 2.2 AA accessibility standards / keyboard and screen-reader testing (to improve UX and increase potential for selling services to public sector organisations)</li>
           <li>Gitlab and basic experience with configuring deployment pipelines.</li>
           <li>Basic understanding of Docker</li>
         </ul>
@@ -45,11 +46,10 @@ export default function Experience() {
         <ul>
           <li>HTML5, CSS3 &ndash; Extensive experience with modular approaches using SCSS (or Tailwind) to scope styles and using variables/mixins to encourage code re-use &ndash; also building responsive layouts with Flexbox, Grid and media queries and use of keyframe animation for interactive elements.</li>
           <li>Javascript, React and Vue</li>
-          <li>js and Express (building REST API to access data and generate)</li>
+          <li>Node.js/Express (REST API for a GOV.UK web app)</li>
           <li>Umbraco CMS development and templating engines (Sites built with Razor templates, or headless front-ends retrieving data via an API)</li>
-          <li>Accessibility (implemented WCAG 2.2 AA standard for a GOV.UK web app)</li>
+          <li>Accessibility (To meet AA standard on a GOV.UK web app)</li>
           <li>Authentication (integration with Microsoft Azure Authenticator)</li>
-          <li>Atomic design principles, and DRY, re-usable code</li>
           <li>Browser compatibility testing (familiarity with Browserstack)</li>
           <li>Working from designs, prototypes and/or wireframes (use of inVision, Figma and basic image manipulation in Photoshop/Inkscape)</li>
           <li>Developing component libraries and site prototypes using Storybook or Patternlab</li>
@@ -110,7 +110,9 @@ export default function Experience() {
         <h1>Experience</h1>
         <section>
           <div className="headingBadge"><h3>Work Experience</h3></div>
-          <div className="contentCard contentCard--titled">{ renderedWorkExperience }</div>
+          <div className="contentCard contentCard--titled">
+            { renderedWorkExperience }
+          </div>
         </section>
   
         <AnimatedSection>

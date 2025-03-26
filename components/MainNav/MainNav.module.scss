@@ -21,6 +21,7 @@ animation: fadeIn 0.4s 0.3s forwards;
     bottom: 0;
     left: 0;
     mix-blend-mode: multiply;
+    opacity: 0.6;
   }
 
   @include breakpts.breakpoint-min(lg) {
@@ -34,6 +35,12 @@ animation: fadeIn 0.4s 0.3s forwards;
   position: relative;
   display: flex;
   flex-direction: column;
+  outline: 1px solid rgba(0,0,0,0.3);
+  outline-offset: -1.5rem;
+
+  @include breakpts.breakpoint-min(lg) {
+    box-shadow: -8px -40vh 0px 0px rgba(0, 0, 0, 0.8), 6px 25vh 0px 0px rgba(0, 0, 0, 0.4);
+  }
 
   &::after {
     z-index: -1;
@@ -66,9 +73,10 @@ animation: fadeIn 0.4s 0.3s forwards;
   svg {
     width: auto;
     height: 3rem;
-    fill: vars.$white;
+    fill: vars.$primary;
+    color: vars.$primary;
     margin-bottom: -7px;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, color 0.2s ease;
 
     @include breakpts.breakpoint-min(lg) {
       height: 4rem;
@@ -76,8 +84,15 @@ animation: fadeIn 0.4s 0.3s forwards;
 
     .panelLink:hover & {
       transform: translateX(10px);
+      color: vars.$secondary;
     }
   }
+}
+
+.highlightedHeading {
+  border-left: 5px solid vars.$primary;
+  padding-left: 1rem !important;
+  margin-left: 3rem;
 }
 
 .panelInner {
