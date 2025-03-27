@@ -92,7 +92,11 @@ animation: fadeIn 0.4s 0.3s forwards;
 .highlightedHeading {
   border-left: 5px solid vars.$primary;
   padding-left: 1rem !important;
-  margin-left: 3rem;
+  margin-left: 1.5rem;
+
+  @include breakpts.breakpoint-min(xl) {
+    margin-left: 3rem;
+  }
 }
 
 .panelInner {
@@ -141,7 +145,7 @@ animation: fadeIn 0.4s 0.3s forwards;
 .panelHeading,
 .panelText {
   color: white;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
 
   @include breakpts.breakpoint-min(xl) {
     padding: 0 3rem;
@@ -158,18 +162,18 @@ animation: fadeIn 0.4s 0.3s forwards;
 .panelOne {
   &::after {
     opacity: 0.4;
-    background-image: url('https://images.unsplash.com/photo-1587713714775-fa70364f6445?q=80&w=1982&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-image: url('/images/welcome.png');
   }
 }
 
 .panelTwo {
   &::after {
-    background-image: url('https://images.unsplash.com/photo-1541873676-a18131494184?q=80&w=2036&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-image: url('/images/experience.png');
   }
 }
 
 .panelThree {
   &::after {
-    background-image: url('https://images.unsplash.com/photo-1558452337-ca6e53836504?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-image: url('/images/interests.png');
   }
 }

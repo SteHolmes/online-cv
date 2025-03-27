@@ -8,7 +8,7 @@ export default function Footer() {
       <p>Built with Next.JS and &#9749;</p>
       <ul className={styles.linkList}>
         <li>
-          <a href="https://github.com/SteHolmes/online-cv" target="_blank">
+          <a href="https://github.com/SteHolmes/online-cv" target="_blank" aria-label="View source on GitHub">
           <FontAwesomeIcon icon={faGithub} size="2x" />          </a>
         </li>
       </ul>
