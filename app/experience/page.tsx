@@ -13,14 +13,14 @@ export default function Experience() {
       dates: 'Nov 2021 to Present',
       content: 
       <div>
-        <p>In my current role I work in a team developing and maintaining four web apps built in Vue JS, Nuxt and React. These projects have exposed me to the full app lifecycle, including the design phase and wireframing using Figma, building new features and apps from the ground up, carrying out upgrades, making incremental improvements based on analytics data, adhering to efficient Git branching strategies for releasing features, and organising deployments to multiple environments. I have also been instrumental in encouraging better accessibility standards and UX principles, constantly striving to improve the services we offer.</p>
+        <p>In my current role I work in a team developing and maintaining four web apps built in React, Vue and Nuxt. These projects have exposed me to the full app lifecycle, including the design phase and wireframing using Figma, building new features and apps from the ground up, carrying out upgrades, making incremental improvements based on analytics data, adhering to efficient Git branching strategies for releasing features, and organising deployments to multiple environments. I have also been instrumental in encouraging better accessibility standards and UX principles, constantly striving to improve the services we offer.</p>
         <h5>Experience Overview:</h5>
         <ul>
           <li>Vue 2/3 (Full rebuild of two apps and upgrade of a third to improve app performance and make use of Vue 3 features to improve dev efficiency)</li>
-          <li>Nuxt 2 and Nuxt Bridge (worked on upgrade to secure vulnerabilities and reduce technical debt)</li>
           <li>React (Redesign and rebuild of legacy app in React and Typescript)</li>
-          <li>Vue CLI, Vite and Webpack</li>
+          <li>Nuxt 2 and Nuxt Bridge (worked on upgrade to secure vulnerabilities and reduce technical debt)</li>
           <li>Typescript (Use TS on any new or upgraded apps to create more robust code and reduce bugs)</li>
+          <li>Vite, Vue CLI and Webpack</li>
           <li>State management (Pinia, VueX)</li>
           <li>Unit testing - Jest, Vitest, Vue Test Utils and React Testing Library</li>
           <li>Monitoring user behaviour with Google Analytics/Hotjar to inform improvements and updates</li>
